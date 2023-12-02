@@ -20,7 +20,7 @@ public class Coneccion {
     
     private String ip="localhost";
     private String puerto="3306";
-    private static final String URL="jdbc:mysql://localhost:3306/ProyectoFinal?serverTimezone=UTC";
+    private static final String URL="jdbc:mysql://localhost:3306/proyectofinal?serverTimezone=UTC";
 
     
   public static Connection EstablacerConnection()

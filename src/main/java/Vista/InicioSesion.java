@@ -154,12 +154,13 @@ public class InicioSesion extends javax.swing.JFrame {
     String usuario =txtUserNombre.getText();
     String contrasenia= txtUserPassword.getText();
     
-    String sql="select (cedula,contrasenia,cargo) from empleado where cedula='"+usuario;
+    String sql="select (cedula,contrasenia,cargo) from empleado where cedula='"+usuario+ "'";
     
-    Connection cn= Coneccion.EstablacerConnection();
+    
     
     //Esto es un try con recursos 
-    try(PreparedStatement myPre=cn.prepareStatement(sql);
+    try(Connection cn= Coneccion.EstablacerConnection();
+            PreparedStatement myPre=cn.prepareStatement(sql);
             ResultSet myRes=myPre.executeQuery()) {
       //como es un solo registro que va a buscar s e hace coon if si fueran muches seria con while
       if(myRes.next()){
